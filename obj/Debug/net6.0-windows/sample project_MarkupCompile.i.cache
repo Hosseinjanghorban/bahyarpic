@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
 C:\Users\Admin\Desktop\sample project\sample project\App.xaml
-61141911887
+5-1595049094
 
-23-1823724782
+21-1736170325
 224-1644967675
-Views\histogram_dialog.xaml;Views\homepage.xaml;Views\home_page.xaml;Views\loginpage.xaml;Views\MainWindow.xaml;Views\signuppage.xaml;
+Views\histogram.xaml;Views\homepage.xaml;Views\loginpage.xaml;Views\MainWindow.xaml;Views\signuppage.xaml;
 
 False
 

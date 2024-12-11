@@ -10,23 +10,23 @@ namespace sample_project
 {
     public class database_image
     {
-        public class database_img : DbContext
-        {
-            public database_img()
-            {
+    //    public class database_img : DbContext
+    //    {
+    //        public database_img()
+    //        {
 
-                Database.EnsureCreated();
+    //            Database.EnsureCreated();
 
-            }
-            public DbSet<image_DBModel> image_model { get; set; }
+    //        }
+    //        public DbSet<image_DBModel> image_model { get; set; }
 
 
-            protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-            {
-                base.OnConfiguring(optionsBuilder);
-                optionsBuilder.UseSqlite("Data Source= database_image.db");
+    //        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+    //        {
+    //            base.OnConfiguring(optionsBuilder);
+    //            optionsBuilder.UseSqlite("Data Source= database_image.db");
 
-            }
-        }
+    //        }
+    //    }
     }
 }

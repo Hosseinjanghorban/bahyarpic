@@ -6,11 +6,11 @@ using System.Linq;
 
 namespace sample_project.ViewModels
 {
-	public class histogram_dialogViewModel : BindableBase
-	{
-        public histogram_dialogViewModel()
+    public class histogramViewModel : BindableBase
+    {
+        public histogramViewModel()
         {
 
         }
-	}
+    }
 }

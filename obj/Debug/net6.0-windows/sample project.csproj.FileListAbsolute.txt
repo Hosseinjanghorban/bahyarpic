@@ -131,3 +131,4 @@ C:\Users\Admin\Desktop\sample project\sample project\obj\Debug\net6.0-windows\sa
 C:\Users\Admin\Desktop\sample project\sample project\obj\Debug\net6.0-windows\App.baml
 C:\Users\Admin\Desktop\sample project\sample project\obj\Debug\net6.0-windows\Views\home_page.baml
 C:\Users\Admin\Desktop\sample project\sample project\obj\Debug\net6.0-windows\Views\home_page.g.cs
+C:\Users\Admin\Desktop\sample project\sample project\obj\Debug\net6.0-windows\sample project.sourcelink.json
