@@ -1,0 +1,23 @@
+﻿<UserControl x:Class="sample_project.Views.loginpage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:prism="http://prismlibrary.com/"             
+             prism:ViewModelLocator.AutoWireViewModel="True">
+    <Grid>
+        <StackPanel Grid.Column="1" Background="AliceBlue">
+            <Label FontSize="30" FontWeight="Bold">Login</Label>
+            <DockPanel Margin="20">
+                <Image Source="H:\advance\todolist\منابع پروژه\profile.png" Width="50" Height="50" Margin="2" HorizontalAlignment="Left"></Image>
+                <Label VerticalAlignment="Center" Margin="5" FontFamily="Dosis" FontSize="20">Username</Label>
+                <TextBox Width="150" Height="30" Background="WhiteSmoke" Text="{Binding username}"></TextBox>
+            </DockPanel>
+            <DockPanel Margin="20">
+                <Image Source="C:\Users\Admin\Desktop\sample project\sample project\resources\reset-password.png" Width="50" Height="55"></Image>
+                <Label VerticalAlignment="Center" Margin="5" FontFamily="Dosis" FontSize="20">Password</Label>
+                <TextBox Width="150" Height="30" Background="WhiteSmoke" Text="{Binding password}" ></TextBox>
+            </DockPanel>
+            <Button Height="50" Width="130" Background="WhiteSmoke" Command="{Binding login}">Login</Button>
+            <TextBlock Foreground="red" Name="errortext" HorizontalAlignment="Center"></TextBlock>
+        </StackPanel>
+    </Grid>
+</UserControl>

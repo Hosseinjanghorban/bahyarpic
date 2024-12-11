@@ -1,0 +1,56 @@
+﻿<Window x:Class="sample_project.Views.homepage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:prism="http://prismlibrary.com/"             
+             prism:ViewModelLocator.AutoWireViewModel="True">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="150"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Menu VerticalAlignment="Top" Grid.Row="0" Grid.ColumnSpan="2" Height="50">
+            <!-- منوی فایل -->
+            <MenuItem Header="File" Height="40" FontSize="15">
+                <MenuItem Header="Open" Height="20" FontSize="15" Command="{Binding openfile}"/>
+                <Separator/>
+                <MenuItem Header="Exit" Height="20" FontSize="15"/>
+            </MenuItem>
+            <Separator></Separator>
+            <MenuItem Header="save" Height="40" FontSize="15" Command="{Binding save_image}"></MenuItem>
+        </Menu>
+            <StackPanel Grid.Column="0" Grid.Row="1" Background="#00b894">
+            <Label Content="{Binding UserName}"  FontFamily="Dosis" FontSize="15" HorizontalAlignment="Left" Margin="5"></Label>
+            <Separator></Separator>
+            <DataGrid AutoGenerateColumns="True" ItemsSource="{Binding list_image}" Margin="0,20,0,0" SelectedIndex="{Binding selectindex}">
+                
+            </DataGrid>
+            <Button Margin="5,20,5,5" Height="30" Width="140" FontFamily="Dosis" FontSize="20" Command="{Binding change_image}">change image</Button>
+            </StackPanel>
+        <StackPanel Grid.Column="1"  Grid.Row="1" Background="AliceBlue">
+            <!--<Button Height="40" Width="150" Margin="5"  FontSize="15" FontFamily="Dosis" Command="{Binding brightness}" HorizontalAlignment="Right" VerticalAlignment="Center">Add Image to mylist</Button>-->
+            <Image x:Name="ImageDisplay"  Source="{Binding DisplayImage}" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="5" Width="600" Height="400"/>
+            <DockPanel>
+                <StackPanel>
+                    <TextBlock Text="Brightness" Margin="0,0,0,0"/>
+                    <Slider x:Name="BrightnessSlider"  Minimum="-100"  Maximum="100" Value="{Binding Brightness}" Width="200" HorizontalAlignment="Left" />
+                    <TextBlock Text="Contrast" Margin="0,0,0,0"/>
+                    <Slider x:Name="ContrastSlider" Minimum="-100" Maximum="100" Value="{Binding Contrast}"  Width="200" HorizontalAlignment="Left" />
+                </StackPanel>
+                <Button Height="45" Width="120" Margin="10" FontSize="20" FontFamily="Dosis" Command="{Binding ApplyAdjustmentsCommand}" HorizontalAlignment="Left" VerticalAlignment="Bottom">Apply changes</Button>
+                <Button Height="45" Width="120" Margin="10" FontSize="20" FontFamily="Dosis" Command="{Binding ApplySharpeningCommand}" HorizontalAlignment="Center" VerticalAlignment="Bottom">Sharpening</Button>
+                <Button Height="45" Width="120" Margin="10" FontSize="20" FontFamily="Dosis" Command="{Binding histogram}" HorizontalAlignment="Right" VerticalAlignment="Bottom">histogram</Button>
+
+            </DockPanel>
+            
+            
+            <DockPanel VerticalAlignment="Bottom">
+                
+            </DockPanel>
+           
+        </StackPanel>
+    </Grid>
+</Window>
