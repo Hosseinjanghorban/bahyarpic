@@ -12,6 +12,9 @@ namespace sample_project.Data_access
         public int user_id { get; set; }
 
         public List<user> list_user { get; set; }
+
+        public string path_histogram { get; set; }
+
     }
 
     public class shareddata_service : ISharedDataService
@@ -19,5 +22,7 @@ namespace sample_project.Data_access
         public int user_id { get; set; }
 
         public List<user> list_user { get; set; }
+
+        public string path_histogram { get; set; }
     }
 }

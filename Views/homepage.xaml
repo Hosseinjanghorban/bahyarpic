@@ -25,7 +25,7 @@
             <StackPanel Grid.Column="0" Grid.Row="1" Background="#00b894">
             <Label Content="{Binding UserName}"  FontFamily="Dosis" FontSize="15" HorizontalAlignment="Left" Margin="5"></Label>
             <Separator></Separator>
-            <DataGrid AutoGenerateColumns="True" ItemsSource="{Binding list_image}" Margin="0,20,0,0" SelectedIndex="{Binding selectindex}">
+            <DataGrid  AutoGenerateColumns="True" ItemsSource="{Binding list_image}" Margin="0,20,0,0" SelectedIndex="{Binding selectindex}">
                 
             </DataGrid>
             <Button Margin="5,20,5,5" Height="30" Width="140" FontFamily="Dosis" FontSize="20" Command="{Binding change_image}">change image</Button>

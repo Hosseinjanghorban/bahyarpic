@@ -1,9 +1,30 @@
 ﻿<Window x:Class="sample_project.Views.histogram"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:prism="http://prismlibrary.com/"             
-             prism:ViewModelLocator.AutoWireViewModel="True">
+             xmlns:prism="http://prismlibrary.com/"  
+             xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation" xmlns:local="clr-namespace:sample_project.ViewModels"
+        prism:ViewModelLocator.AutoWireViewModel="True"
+             Title="Histogram">
+    <!--<Window.DataContext>
+        <local:histogramViewModel />
+    </Window.DataContext>-->
     <Grid>
-            
+        <telerik:RadCartesianChart HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+            <telerik:RadCartesianChart.HorizontalAxis>
+                <telerik:CategoricalAxis Title="Intensity">
+                    <telerik:CategoricalAxis.LabelTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="" />
+                        </DataTemplate>
+                    </telerik:CategoricalAxis.LabelTemplate>
+                </telerik:CategoricalAxis>
+            </telerik:RadCartesianChart.HorizontalAxis>
+            <telerik:RadCartesianChart.VerticalAxis>
+                <telerik:LinearAxis Title="Frequency"/>
+            </telerik:RadCartesianChart.VerticalAxis>
+            <telerik:RadCartesianChart.Series>
+                <telerik:BarSeries ItemsSource="{Binding HistogramData}" CategoryBinding="Key" ValueBinding="Value"/>
+            </telerik:RadCartesianChart.Series>
+        </telerik:RadCartesianChart>
     </Grid>
 </Window>

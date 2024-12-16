@@ -16,7 +16,6 @@ namespace sample_project.ViewModels
         public CompositeCommand signupcommandbar { get; set; }
 
         public user_dataaccess user_Dataaccess = new user_dataaccess();
-        public img_data_access image_dataaccess = new img_data_access();
 
         List<user> list_user = new List<user>();
         public string firstname { get; set; }
@@ -96,7 +95,6 @@ namespace sample_project.ViewModels
                         //add to database
                        user_Dataaccess.add_user(tmp_user);
                         List<image> images = new List<image>();
-                        image_dataaccess.add_image(images,user_id);
                         MessageBox.Show("Your signup was successful.", "success!", MessageBoxButton.OK, MessageBoxImage.Information);
 
                         //goto homepage

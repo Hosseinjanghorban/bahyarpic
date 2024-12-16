@@ -109,8 +109,6 @@ C:\Users\Admin\Desktop\sample project\sample project\bin\Debug\net6.0-windows\ru
 C:\Users\Admin\Desktop\sample project\sample project\bin\Debug\net6.0-windows\runtimes\win-x86\native\msvcp140_atomic_wait.dll
 C:\Users\Admin\Desktop\sample project\sample project\bin\Debug\net6.0-windows\runtimes\win-x86\native\msvcp140_codecvt_ids.dll
 C:\Users\Admin\Desktop\sample project\sample project\bin\Debug\net6.0-windows\runtimes\win-x86\native\vcruntime140.dll
-C:\Users\Admin\Desktop\sample project\sample project\obj\Debug\net6.0-windows\Views\histogram_dialog.baml
-C:\Users\Admin\Desktop\sample project\sample project\obj\Debug\net6.0-windows\Views\histogram_dialog.g.cs
 C:\Users\Admin\Desktop\sample project\sample project\bin\Debug\net6.0-windows\Telerik.Windows.Controls.Chart.Direct2D.dll
 C:\Users\Admin\Desktop\sample project\sample project\bin\Debug\net6.0-windows\Telerik.Windows.Controls.Chart.dll
 C:\Users\Admin\Desktop\sample project\sample project\bin\Debug\net6.0-windows\Telerik.Windows.Controls.Chart.Skia.dll
@@ -129,6 +127,6 @@ C:\Users\Admin\Desktop\sample project\sample project\bin\Debug\net6.0-windows\nl
 C:\Users\Admin\Desktop\sample project\sample project\bin\Debug\net6.0-windows\tr\Telerik.Windows.Controls.resources.dll
 C:\Users\Admin\Desktop\sample project\sample project\obj\Debug\net6.0-windows\sample project_MarkupCompile.lref
 C:\Users\Admin\Desktop\sample project\sample project\obj\Debug\net6.0-windows\App.baml
-C:\Users\Admin\Desktop\sample project\sample project\obj\Debug\net6.0-windows\Views\home_page.baml
-C:\Users\Admin\Desktop\sample project\sample project\obj\Debug\net6.0-windows\Views\home_page.g.cs
 C:\Users\Admin\Desktop\sample project\sample project\obj\Debug\net6.0-windows\sample project.sourcelink.json
+C:\Users\Admin\Desktop\sample project\sample project\obj\Debug\net6.0-windows\Views\histogram.baml
+C:\Users\Admin\Desktop\sample project\sample project\obj\Debug\net6.0-windows\Views\histogram.g.cs

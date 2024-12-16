@@ -22,9 +22,14 @@ using sample_project.Data_access;
 using sample_project.Model;
 using System.Collections.ObjectModel;
 using Emgu.CV.Util;
+using sample_project.Views;
 
 namespace sample_project.ViewModels
 {
+    public class HistogramDataItem {
+        public int Key { get; set; }
+        public double Value { get; set; }
+    }
     public class homepageViewModel : BindableBase
     {
         private Mat _originalImage;
@@ -64,7 +69,6 @@ namespace sample_project.ViewModels
         public OpenFileDialog filedialog { get; set; }
         public DelegateCommand save_image { get; set; }
         public DelegateCommand change_image { get; set; }
-        public img_data_access image_dataaccess = new img_data_access();
         private ObservableCollection<image> _list_image;
         public image tmp_image { get; set; }
 
@@ -75,11 +79,7 @@ namespace sample_project.ViewModels
             get { return _selectindex ; }
             set { _selectindex  = value; }
         }
-        //private ObservableCollection<HistogramDataItem> _histogramData;
-        //public ObservableCollection<HistogramDataItem> HistogramData { 
-        //    get { return _histogramData; }
-        //    set { SetProperty(ref _histogramData, value); }
-        //}
+    
         public ObservableCollection<image> list_image
         {
             get { return _list_image; }
@@ -96,7 +96,7 @@ namespace sample_project.ViewModels
             save_image = new DelegateCommand(do_saveimage);
             change_image = new DelegateCommand(do_changeimage);
             sharpening = new DelegateCommand(OnApplySharpening);
-           // histogram = new DelegateCommand(change_histogram);
+            histogram = new DelegateCommand(change_histogram);
             ApplyAdjustmentsCommand = new DelegateCommand(OnApplyAdjustments);
             ApplySharpeningCommand = new DelegateCommand(OnApplySharpening);
             _sharedDataService = sharedDataService;
@@ -104,9 +104,10 @@ namespace sample_project.ViewModels
             //database image
            // image_dataaccess.readdata_img(list_image,_sharedDataService.user_id);
            list_image = new ObservableCollection<image>();
+            
         }
-
-        private void do_changeimage()
+       
+            private void do_changeimage()
         {
             string tmp;
             try
@@ -220,64 +221,16 @@ namespace sample_project.ViewModels
             UpdateDisplayImage(_adjustedImage);
         }
 
-       /* private void change_histogram()
+        private void change_histogram()
         {
-            // ایجاد ماتریس برای عکس خاکستری
-             Mat grayImage = new Mat();
-            CvInvoke.CvtColor(_originalImage, grayImage, ColorConversion.Bgr2Gray);
-            // محاسبه هیستوگرام
-             VectorOfMat vm = new VectorOfMat();
-            vm.Push(grayImage);
-            Mat hist = new Mat();
-            int[] histSize = { 256 };
-           // RangeF[] ranges = { new RangeF(0.0f, 256.0f) };
-            float[] ranges = { 0.0f, 256.0f };
-            int[] channels = { 0 };
-            CvInvoke.CalcHist(new VectorOfMat(grayImage), channels, null, hist, histSize, ranges, false);            // پر کردن داده‌های هیستوگرام
-            for (int i = 0; i < hist.Rows; i++)
-            {// float[] data = new float[1];
-                float data = (float)hist.GetValue(i, 0);
-                HistogramData.Add(new HistogramDataItem { Key = i, Value = data });
-               // HistogramData.Add(new HistogramDataItem { Key = i, Value = data[0] });
-            }
-
-            //float[] histData = new float[histSize[0]];
-            //hist.GetArray(0, 0, histData);
-            //  HistogramData.Clear();
-            //for (int i = 0; i < histData.Length; i++) { 
-            //    HistogramData.Add(new HistogramDataItem { Key = i, Value = histData[i] });
-            //}
+            _sharedDataService.path_histogram = filePath;
+            histogram _histogram = new histogram();
+            _histogram.Show();
         }
 
-        public static float[] ComputeGrayscaleHistogram(Mat image)
-        {
-            if (image.NumberOfChannels > 1)
-            {
-                // Convert to grayscale if needed
-                CvInvoke.CvtColor(image, image, Emgu.CV.CvEnum.ColorConversion.Bgr2Gray);
-            }
-
-            // Initialize histogram parameters
-            int[] bins = { 256 };        // Number of bins
-            float[] range = { 0, 256 }; // Intensity range
-            Mat hist = new Mat();
-
-            // Calculate the histogram
-            CvInvoke.CalcHist(
-                new[] { image },         // Input image(s)
-                new int[] { 0 },         // Channels to compute
-                null,                    // No mask
-                hist,                    // Output histogram
-                bins,                    // Number of bins
-                new[] { range }          // Range
-            );
-
-            // Convert histogram to float array for display
-            float[] histogramData = new float[bins[0]];
-            hist.CopyTo(histogramData);
-            return histogramData;
-        }*/
-        private void UpdateDisplayImage(Mat mat)
+  
+     
+         private void UpdateDisplayImage(Mat mat)
         {
             Bitmap bitmap = mat.ToBitmap();
             DisplayImage = BitmapToImageSource(bitmap);

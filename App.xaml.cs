@@ -23,7 +23,6 @@ namespace sample_project
             containerRegistry.RegisterForNavigation<loginpage>();
             containerRegistry.RegisterForNavigation<homepage>();
             containerRegistry.RegisterForNavigation<MainWindow>();
-            containerRegistry.RegisterForNavigation<home_page>();
             containerRegistry.RegisterSingleton<ISharedDataService, shareddata_service>();
 
 
